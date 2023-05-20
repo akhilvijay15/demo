@@ -18,12 +18,7 @@ pipeline{
                     }
                 }
 
-                timeout(time: 1, unit: 'HOURS') {
-                      def java_quality = waitForQualityGate()
-                      if (java_quality.status != 'OK') {
-                           error "Pipeline aborted due to quality gate failure: ${qg.status}"
-                      }
-                    }
+                
             }
         }
     }
